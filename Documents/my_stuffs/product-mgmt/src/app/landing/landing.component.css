@@ -1,0 +1,63 @@
+
+.items{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80rem;
+  color: #000;
+
+}
+
+.head{
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 350;
+  letter-spacing: 0.3rem;
+  margin-bottom: 7rem;
+  color: #fff;
+}
+
+.icon{
+  width: 3rem;
+  text-align: center;
+}
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 10rem;
+  width: 16rem;
+  font-size: 2rem;
+  border: 2px solid #777;
+  border-radius: 2rem;
+  cursor: pointer;
+  transform: translateY(-2px);
+  text-transform: uppercase;
+  transition: all 0.1s;
+  text-decoration: none;
+}
+
+div:focus{
+  outline: none;
+}
+
+.box:active{
+  transform: translateY(2px);
+
+}
+
+
+.landing{
+
+  display:flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  background: #1DACBC;
+  flex-direction: column
+}
+
