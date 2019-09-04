@@ -20,6 +20,15 @@ export class ProductService {
     return this.http.get(`api/ProductManagement/product/isexists/${id}`);
   }
 
+  updateProduct(product: Product) {
+    return this.http.put(`api/ProductManagement/product/update`, product);
+  }
+
+  // tslint:disable-next-line: ban-types
+  addProduct(product: Object) {
+    return this.http.post(`api/ProductManagement/product/add`, product);
+  }
+
   getAllProducts() {
 
     this.http.get(`api/ProductManagement/product/getallproducts`).subscribe(res => {

@@ -5,6 +5,7 @@ import {Product} from '../product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { MatDialog } from '@angular/material';
 import { DeleteDialogComponent } from 'src/app/delete-dialog/delete-dialog.component';
+import { ProductUpdateComponent } from '../product-update/product-update.component';
 
 @Component({
   selector: 'app-product-view',
@@ -26,20 +27,34 @@ export class ProductViewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.productService.productsData$.subscribe(res => this.products = new MatTableDataSource([...res]));
+    this.productService.productsData$.subscribe(res => {
+      this.products = new MatTableDataSource([...res]);
+      this.products.paginator = this.paginator;
+    });
   }
 
   deleteClick(id: number) {
-    console.log(id);
+    // console.log(id);
     const dialogRef =  this.dialog.open( DeleteDialogComponent, {
       width: '40rem', height: '8rem',
       data: {id, type: 'product'}
     });
 
-   dialogRef.afterClosed().subscribe(() => this.productService.getAllProducts());
+    dialogRef.afterClosed().subscribe(() => this.productService.getAllProducts());
 
   }
 
+  updateClick(product: Product) {
+
+
+    const dialogRef = this.dialog.open(ProductUpdateComponent, {
+      data: product,
+      width: '20rem',
+      panelClass: 'no-padding-dialog'
+    });
+
+
+  }
 
 
 }

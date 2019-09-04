@@ -1,9 +1,9 @@
 <div class = "container">
   <section>
       <mat-card class = 'mat-card'>
-          <mat-card-title>Add a Product</mat-card-title>
-          <form [formGroup]="productForm" autocomplete="off"
-           novalidate (ngSubmit)="addProduct(productForm.value)"
+          <mat-card-title>Update Product</mat-card-title>
+          <form [formGroup]="productUpdateForm" autocomplete="off"
+           novalidate (ngSubmit)="updateProduct(productUpdateForm.value)"
            fxLayout="column wrap"
           fxLayoutAlign="center center" fxLayoutGap="2rem">
           <mat-card-content>
@@ -29,12 +29,14 @@
                     </mat-form-field>
               </mat-card-content>
               <mat-card-actions>
-                  <button mat-raised-button color="primary" [disabled]="!productForm.valid">Add</button>
-                  <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+                  <button mat-raised-button color="primary" [disabled]="!productUpdateForm.valid">Update</button>
+                  <button type="button" mat-raised-button (click)="onCancel()">Cancel</button>
               </mat-card-actions>
             </form>
         </mat-card>
     </section>
   </div>
+
+
 
 

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 export interface DialogData {
 
   msg: string;
+  type: string;
 
 }
 
@@ -26,11 +27,19 @@ export class AddDialogComponent implements OnInit {
   }
 
   onNoClick() {
-    this.router.navigateByUrl('/supplies');
+    if (this.data.type === 'supply') {
+      this.router.navigateByUrl('/supplies');
+    } else if (this.data.type === 'vendor') {
+      this.router.navigateByUrl('/vendors');
+    } else if (this.data.type === 'product') {
+      this.router.navigateByUrl('/products');
+    } else {
+      this.router.navigateByUrl('/');
+ }
     this.dialogRef.close();
   }
 
-  onYesClick(){
+  onYesClick() {
     this.dialogRef.close();
   }
 

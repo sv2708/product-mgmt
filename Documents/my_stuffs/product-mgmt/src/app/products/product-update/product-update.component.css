@@ -1,19 +1,13 @@
-
-.container{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-
-}
-
 mat-form-field{
-  width: 30rem;
+  width: 14rem;
 }
 
 mat-card-title{
   text-align: center;
+}
+
+mat-card-content{
+  padding-left: 2rem;
 }
 
 mat-card-actions{
@@ -21,4 +15,5 @@ mat-card-actions{
   align-items: center;
   justify-content: space-evenly;
 }
+
 

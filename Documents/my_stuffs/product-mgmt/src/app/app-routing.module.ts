@@ -10,6 +10,9 @@ import { SupplyViewComponent } from './supplies/supply-view/supply-view.componen
 import { ProductLandComponent } from './products/product-land/product-land.component';
 import { ProductAddComponent } from './products/product-add/product-add.component';
 import { ProductViewComponent } from './products/product-view/product-view.component';
+import { VendorLandComponent } from './vendors/vendor-land/vendor-land.component';
+import { VendorAddComponent } from './vendors/vendor-add/vendor-add.component';
+import { VendorViewComponent } from './vendors/vendor-view/vendor-view.component';
 
 
 const routes: Routes = [
@@ -32,7 +35,18 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'vendors', component: VendorsComponent
+    path: 'vendors', component: VendorsComponent,
+    children: [
+      {
+        path: '', component: VendorLandComponent
+      },
+      {
+        path: 'add', component: VendorAddComponent
+      },
+      {
+        path: 'view', component: VendorViewComponent
+      }
+    ]
   },
   {
     path: 'products', component: ProductsComponent,

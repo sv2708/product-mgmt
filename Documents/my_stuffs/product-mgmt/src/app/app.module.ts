@@ -19,6 +19,11 @@ import { ProductLandComponent } from './products/product-land/product-land.compo
 import { ProductViewComponent } from './products/product-view/product-view.component';
 import { ProductAddComponent } from './products/product-add/product-add.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { ProductUpdateComponent } from './products/product-update/product-update.component';
+import { VendorAddComponent } from './vendors/vendor-add/vendor-add.component';
+import { VendorViewComponent } from './vendors/vendor-view/vendor-view.component';
+import { VendorUpdateComponent } from './vendors/vendor-update/vendor-update.component';
+import { VendorLandComponent } from './vendors/vendor-land/vendor-land.component';
 
 
 @NgModule({
@@ -36,6 +41,11 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     ProductViewComponent,
     ProductAddComponent,
     DeleteDialogComponent,
+    ProductUpdateComponent,
+    VendorAddComponent,
+    VendorViewComponent,
+    VendorUpdateComponent,
+    VendorLandComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     BrowserAnimationsModule,
     MatNativeDateModule,
   ],
-  entryComponents: [AddDialogComponent, DeleteDialogComponent],
+  entryComponents: [AddDialogComponent, DeleteDialogComponent, ProductUpdateComponent],
   providers: [
   ],
   bootstrap: [AppComponent]

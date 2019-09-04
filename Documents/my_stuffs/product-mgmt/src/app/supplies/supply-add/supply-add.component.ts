@@ -36,6 +36,7 @@ export class SupplyAddComponent implements OnInit {
 
   public supplyForm: FormGroup;
 
+
   constructor(private prodService: ProductService,
               private valService: ValidatorService,
               private supplyService: SupplyService,
@@ -60,7 +61,6 @@ export class SupplyAddComponent implements OnInit {
 
   public onCancel = () => {
 
-
     this.routerService.navigateByUrl('/supplies');
     return;
 
@@ -75,13 +75,13 @@ export class SupplyAddComponent implements OnInit {
 
         this.dialog.open(AddDialogComponent, {
           width: '400px', height: '8rem',
-          data: {msg: 'Supply Added Successfully'}
+          data: {msg: 'Supply Added Successfully', type: 'supply'}
         });
     }, err => {
 
         this.dialog.open(AddDialogComponent, {
           width: '400px', height: '8rem',
-            data: {msg: 'Supply Addition Failed'}
+            data: {msg: 'Supply Addition Failed', type: 'supply'}
         });
 
       });
