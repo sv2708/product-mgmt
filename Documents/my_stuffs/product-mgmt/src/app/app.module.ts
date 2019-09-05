@@ -57,7 +57,7 @@ import { VendorLandComponent } from './vendors/vendor-land/vendor-land.component
     BrowserAnimationsModule,
     MatNativeDateModule,
   ],
-  entryComponents: [AddDialogComponent, DeleteDialogComponent, ProductUpdateComponent],
+  entryComponents: [AddDialogComponent, DeleteDialogComponent, ProductUpdateComponent, VendorUpdateComponent],
   providers: [
   ],
   bootstrap: [AppComponent]

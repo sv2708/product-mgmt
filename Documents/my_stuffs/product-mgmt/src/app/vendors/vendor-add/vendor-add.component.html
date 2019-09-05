@@ -1,0 +1,55 @@
+
+<div class = "container">
+  <section>
+      <mat-card class = 'mat-card'>
+          <mat-card-title>Add a Vendor</mat-card-title>
+          <form [formGroup]="vendorForm" autocomplete="off"
+           novalidate (ngSubmit)="addVendor(vendorForm.value)"
+           fxLayout="column wrap"
+          fxLayoutAlign="center center" fxLayoutGap="2rem">
+          <mat-card-content>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Vendor Name" formControlName="vendorName" id="name">
+              <mat-error *ngIf="hasError('vendorName', 'required')">Vendor Name is required</mat-error>
+              <mat-error *ngIf="hasError('vendorName', 'minlength')">Vendor Name must be atleast 3 Characters</mat-error>
+              <mat-error *ngIf="hasError('vendorName', 'isNotName')">Enter a valid name</mat-error>
+            </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Address Line 1" formControlName="addressLine1" id="name">
+          <mat-error *ngIf="hasError('addressLine1', 'required')">Address is required</mat-error>
+          <mat-error *ngIf="hasError('addressLine1', 'minlength')">Address must be atleast 5 Characters</mat-error>
+        </mat-form-field>
+  </mat-card-content>
+        <mat-card-content>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Address Line 2" formControlName="addressLine2" id="name">
+          <mat-hint align = "start">Optional</mat-hint>
+        </mat-form-field>
+  </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Email" formControlName="email" id="name">
+          <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        </mat-form-field>
+      </mat-card-content>
+     <mat-card-content>
+          <mat-form-field>
+          <input matInput type="text" placeholder="Phone Number" formControlName="phoneNumber" id="name">
+            <mat-error *ngIf="hasError('phoneNumber', 'required')">PhoneNumber is required</mat-error>
+            <mat-error *ngIf="hasError('phoneNumber', 'minlength')">Phone Number must be 10 digits</mat-error>
+            <mat-error *ngIf="hasError('phoneNumber', 'maxlength')">Phone Number must be 10 digits</mat-error>
+            <mat-error *ngIf="hasError('phoneNumber', 'isNotNumber')">Enter a Valid Phone Number</mat-error>
+            </mat-form-field>
+          </mat-card-content>
+        <mat-card-actions>
+        <button mat-raised-button color="primary" [disabled]="!vendorForm.valid">Add</button>
+         <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+         </mat-card-actions>
+     </form>
+  </mat-card>
+ </section>
+</div>
+
+

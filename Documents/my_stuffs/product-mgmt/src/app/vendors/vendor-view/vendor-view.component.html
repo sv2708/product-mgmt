@@ -1,1 +1,57 @@
-<p>vendor-view works!</p>
+
+<div class = "container">
+  <div>
+    <header class = "view-header">
+        Vendors List
+    </header>
+  </div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="vendors">
+      <ng-container matColumnDef="vendorId">
+          <th mat-header-cell *matHeaderCellDef> Vendor ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.vendorId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="vendorName">
+          <th mat-header-cell *matHeaderCellDef> Vendor Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.vendorName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="phoneNumber">
+          <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.phonenumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-stroked-button color="primary" (click) = "updateClick(element)">Update</button>
+            </td>
+          </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-raised-button color="warn" (click)="deleteClick(element.vendorId)">Delete</button>
+              </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSize]="10"  showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+
+

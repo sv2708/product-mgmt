@@ -16,8 +16,24 @@ export class ValidatorService {
     return (control: AbstractControl): {[key: string]: boolean} | null => {
         return isNaN(control.value) ? {isNotNumber: true} : null;
 
+    };
+  }
+
+  nameValidator(): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: boolean} | null => {
+      const val = control.value;
+      for (let i = 0; i < val.length; i++) {
+        const c = val.charCodeAt(i);
+        if ((c >= 97 && c <= 122) || c >= 65 && c <= 90 || val[i] === ' ') {
+          continue;
+        } else {
+          return {isNotName: true};
+        }
+      }
+      return null;
     }
   }
+
 
   vendorIdValidator(time: number = 500): AsyncValidatorFn {
     return (input: FormControl) => {

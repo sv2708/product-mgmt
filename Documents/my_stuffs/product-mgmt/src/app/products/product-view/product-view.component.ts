@@ -17,6 +17,7 @@ export class ProductViewComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['productId', 'productName', 'manufacturerDetails', 'price', 'update', 'delete'];
   public products = new MatTableDataSource<Product>([]);
 
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   constructor(private productService: ProductService,
@@ -34,7 +35,7 @@ export class ProductViewComponent implements OnInit, AfterViewInit {
   }
 
   deleteClick(id: number) {
-    // console.log(id);
+    console.log(id);
     const dialogRef =  this.dialog.open( DeleteDialogComponent, {
       width: '40rem', height: '8rem',
       data: {id, type: 'product'}
